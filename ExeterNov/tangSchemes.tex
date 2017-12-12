@@ -1,0 +1,94 @@
+\begin{slide}{Constructing the Tangential Velocities}
+
+\vspace{12pt}
+\begin{minipage}[t]{0.45\linewidth}
+
+\begin{center}\bf\large
+1. Least Squares Fit Interpolation
+\includegraphics[scale=0.65]{figs/recon.pdf}
+\end{center}
+
+\begin{list0}
+\item Find $u^\perp = \vec{U}\dprod \vec{t}$ from surrounding normal velocities, $u_e$.
+
+\item Assume $\vec{U}$ linearly distributed over adjacent cells:
+
+ $\vec{U} = \vec{A} + \vec{B} x + \vec{C} y$
+
+\item At each cell face we know $u_e = \vec{U}\dprod \vec{n}$
+
+\item Least squares fit to find $\vec{U}\dprod \vec{t} = u^\perp$
+\end{list0}
+\end{minipage}
+\hspace{0.09\linewidth}
+\begin{minipage}[t]{0.45\linewidth}\begin{center}
+
+{\bf\large 2. Thuburn et al, 2009 technique}
+
+\includegraphics[scale=0.65]{figs/TRSK.pdf}
+
+\begin{list0}
+\item $u^\perp d = \sum w_e \ell_e u_e$
+
+\item where $w_e = \pm \bigl(\frac{1}{2} - \frac{A_1 + A_2}{A_t}\biggr)$
+\end{list0}
+\includegraphics[scale=0.65]{figs/TRSKAreas.pdf}
+
+\end{center} \end{minipage}
+
+\end{slide}
+
+\begin{slide}{Constructing the Tangential Velocities}
+
+\vspace{12pt}
+\begin{minipage}[t]{0.45\linewidth}
+
+\begin{center}\bf\large
+1. Least Squares Fit Interpolation
+\end{center}
+
+\begin{list0}
+\item Trivially generalised to 3D
+
+\item $u^\perp$ is bounded between surrounding values
+\end{list0}
+\end{minipage}
+\hspace{0.09\linewidth}
+\begin{minipage}[t]{0.45\linewidth}\begin{center}
+
+{\bf\large 2. Thuburn et al, 2009 technique}
+
+\begin{list0}
+\item Geostrophic modes are stationary
+
+\item Coriolis term preserves energy
+\end{list0}
+
+\end{center} \end{minipage}
+
+\vspace{24pt}
+\begin{center}
+\includegraphics{graphics/shallowWater+WilliSteadyMeshAdapt+Voronoi_f+save+energy.pdf}
+\end{center}
+\end{slide}
+
+\begin{slide}{}
+\begin{minipage}[t]{0.45\linewidth}
+
+\begin{center}\bf\large
+1. Least Squares Fit Interpolation
+\end{center}
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+48x96_V+save+reconLin+0+hUzoom.pdf}
+
+\end{minipage}
+\hspace{0.09\linewidth}
+\begin{minipage}[t]{0.45\linewidth}\begin{center}
+
+{\bf\large 2. Thuburn et al, 2009 technique}
+
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+48x96_V+save+TRSK+0+hUzoom.pdf}
+
+\end{center}\end{minipage}
+\end{slide}

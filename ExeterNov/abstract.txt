@@ -1,0 +1,9 @@
+Adaptive Mesh Modelling of the Global Atmosphere
+
+Hilary Weller, University of Reading, UK
+
+Adaptive meshing of the atmosphere may prove beneficial for resolving tropical cyclones, fronts, convection and orography. However there are a number of challenges before these methods can be effective operationally. These include finding appropriate mesh refinement criteria, automatic re-meshing for unstructured meshes and conservative mesh to mesh mapping which does not alter the partition between balanced and unbalanced fields.
+
+I will describe a new model of the global atmosphere which solves the shallow water equations accurately on any mesh of the sphere. This has allowed direct comparisons between different mesh structures and different refinement patterns.
+
+I will also describe a new mesh refinement technique which allows infrequent mesh adaptation. This reduces the cost of remeshing and reduces the errors introduced by remeshing.

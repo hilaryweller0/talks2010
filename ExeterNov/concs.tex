@@ -1,0 +1,37 @@
+\begin{slide}{Conclusions}
+
+\begin{list0}
+
+\item Local refinement can degrade accuracy. This is despite:
+    \begin{list1}
+    \item Global second order accuracy (quadratic differencing)
+    \item Staggering of pressure and velocity
+    \item Gradual refinement
+    \item Static refinement
+    \item No grid scale wave reflection at mesh inhomogeneity
+    \end{list1}
+And so refinement should only be used sparingly
+
+\item Orthogonal meshes are hugely beneficial
+    \begin{list1}
+    \item Much more accurate behaviour
+    \item Much cheaper!
+    \end{list1}
+
+\item Any 2D or 3D mesh can be made orthogonal by Delaunay triangulating the vertices and then taking the Voronoi dual. But you MUST then use the Delaunay triangle vertices as cell centres and the mid-points between cell centres as face centres
+
+\item Thuburn et al, 2009 scheme generates essential unbounded velocities so as to maintain geostrophic balance
+
+\item Any mesh irregularity can trigger release of physically unstable flow
+
+\item Mesh adaptation only every 12 hours (72 time steps):
+
+\begin{list1}
+\item using coarse prediction of future 12 hours
+\item gives accurate results
+\item reduces remeshing costs
+\item reduces likelihood of runaway adaptation
+\end{list1}
+\end{list0}
+
+\end{slide}

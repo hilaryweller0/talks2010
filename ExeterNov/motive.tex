@@ -1,0 +1,125 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+{
+    Motivation: Avoid the Pole Problem
+    {
+        \normalsize\normalfont
+        Especially for parallelisation
+    }
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\includegraphics[width=\linewidth]{plots/meshes+latLon+constant+mesh.pdf}
+\end{center}
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.24\linewidth}\raggedright
+
+{\Large\bf
+Motivation: Resolution where most needed
+}
+
+\vspace{0.5in}
+
+NCEP/NCAR precip\\
+1 April 2010\\
+(mm/day)
+
+\vspace{2.5in}
+
+Mesh of 2,778 cells\\
+Equivalent uniform mesh would have 40,962 cells\\
+
+\end{minipage}
+%
+\begin{minipage}[t]{0.75\linewidth}\raggedright\ \\ \vspace{-0.1in}
+\includegraphics[scale=1]{../../../proposals/fellow09/presentation/data/ppt.png}
+\includegraphics[scale=1]{../../../proposals/fellow09/presentation/data/mesh.pdf}
+\end{minipage}
+
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{But fine scale detail is ubiquitous}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+NEODAAS GOES East 075.0W 2 Nov 2008 18:00hours Channel: 1 (Visible)
+%Meteosat SEVIRI midday on 2 Nov 2008 Channel: 1 (0.56 - 0.71 $\mu m$ Visible) \\
+\includegraphics[scale=0.5]{../../2009/BathMay2009/plots/2008_11_2_1800_GOES12_1_S2.jpg}
+\end{center}
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{Where is improved resolution most needed?}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{6pt}
+{\Large Some small scale features can influence global climate:}
+\vspace{6pt}
+
+\begin{itemize}
+\item
+\begin{minipage}[t]{0.55\linewidth}\Large
+Deep atmospheric convection \\(eg supercells are 10s of kms across)
+\end{minipage}
+\parbox[t]{0.3\linewidth}{\ \\ \vspace{-48pt} \vfill
+\includegraphics[width=\linewidth]{../../../proposals/fellow09/presentation/figs/800px-Chaparral_Supercell_2.JPG}
+}
+
+\item
+\begin{minipage}[t]{0.55\linewidth}\Large
+\Large Flow around mountains
+\end{minipage}
+\parbox[t]{0.3\linewidth}{\ \\ \vspace{-48pt} \vfill
+\includegraphics[width=\linewidth]{../../../proposals/fellow09/presentation/figs/20090104_Orographic_clouds__Mt_Cook.JPG}
+}
+
+\item
+\begin{minipage}[t]{0.55\linewidth}\Large
+Temperature inversions with height \\(eg stratocumulus)
+\end{minipage}
+\parbox[t]{0.3\linewidth}{\ \\ \vspace{-48pt} \vfill
+\includegraphics[width=\linewidth]{../../../proposals/fellow09/presentation/figs/stratocumulus.jpg}
+}
+
+\end{itemize}
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{But {\it Deep} Convection is sparse, globally influencial and can be represented with $\sim$km resolution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\large
+NICAM uses a hexagonal icosahedral mesh at fixed resolutions down to 3.5km on the Earth Simulator and captures features of tropical cloud clusters: \\
+(see work of Masaki Satoh et al, JAMSTEC)
+
+\vspace{20pt}
+\begin{tabular}{cc}
+NICAM at 3.5km & GMS/GOES-9 at Apr. 6, 2004, 00UTC\\
+\includegraphics{../../2009/BathMay2009/plots/NICAM.png}
+&
+\includegraphics{../../2009/BathMay2009/plots/GOES-9.png}
+\end{tabular}
+
+\end{center}
+
+\begin{list0}
+
+    \item But these ``Grand Challenge'' experiments are too expensive for operations
+
+    \item And 3.5km is still not really fine enough to {\it resolve} convection
+
+\end{list0}
+
+\end{slide}

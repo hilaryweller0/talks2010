@@ -1,0 +1,145 @@
+\makeatletter
+
+%\documentclass[a4paper,12pt]{article}
+\documentclass[30pt,landscape]{foils}
+\usepackage{hsslides2}
+\parskip=20pt
+
+% Define page margins
+% for on screen presentation
+\setlength{\topmargin}{-1.0in}
+% for printing
+%\setlength{\topmargin}{-0.5in}
+
+\raggedright
+
+\usepackage{color, rotating, times, amssymb, amsmath, pause, graphicx, subfigure, tabularx, lscape, multirow, natbib, wasysym}
+
+%\pagestyle{myheadings}
+%\markright{Spencer et al, Wind Stress Correction, \today}
+
+% line spacing
+%\usepackage{doublespace}
+\renewcommand{\baselinestretch}{1}
+
+% tabular customisation
+%\setlength{\tabcolsep}{3pt}
+%\renewcommand{\arraystretch}{1}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{K}{>{\centering\arraybackslash}p}
+\renewcommand{\tabularxcolumn}[1]{>{}m{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\setlength{\fboxsep}{1mm}
+
+\newcommand{\heading}[1]{\begin{center} \bf \Large #1 \end{center}}
+\newcommand{\subheading}[1]{\begin{center} \Large #1 \end{center}}
+
+\newcommand{\figWidth}{0.99\linewidth}
+\newcommand{\HFigWidth}{0.49\linewidth}
+
+\renewcommand{\Huge}{\fontsize{36}{44}\selectfont}
+\renewcommand{\huge}{\fontsize{30}{36}\selectfont}
+\renewcommand{\Large}{\fontsize{24}{30}\selectfont}
+\renewcommand{\large}{\fontsize{20}{25}\selectfont}
+\renewcommand{\normalsize}{\fontsize{18}{22}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{16}{20}\selectfont}
+\renewcommand{\small}{\fontsize{14}{17}\selectfont}
+\renewcommand{\tiny}{\fontsize{12}{14}\selectfont}
+\fontsize{18}{22}\selectfont
+
+%   colours
+\definecolor{hsblue}{rgb}{0.2,0.2,0.6}
+\definecolor{purple}{rgb}{0.6,0,0.7}
+\definecolor{gray}{rgb}{0.7,0.7,0.7}
+\definecolor{darkgreen}{rgb}{0.2,0.7,0.2}
+
+%\AtBeginDocument{
+%\def\@foilhead[#1]#2{{\clearpage%
+%     \color@begingroup\normalcolor
+%     \reset@font\Large\bfseries\centering#2\nopagebreak[4]%
+%     \null\color@endgroup}}%
+%\setlength\parskip{4\p@ \@plus 4\p@ \@minus 8\p@}
+%}
+
+% FOAM paths
+% ~~~~~~~~~~
+\newcommand{\macroPath}{\HOME/latex/begin/foam}
+
+% Nabla's specific macro packages
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\usepackage{latexsym,amssymb}
+%\usepackage{\macroPath/figtabeqnindbib}     % Bundled packages + some defined
+%\usepackage{\macroPath/productsversions}
+%\usepackage{\macroPath/specialsymbolsfonts} % Special symbols esp for html
+%\usepackage{\macroPath/keywordstyles}       % Styles/indexing for types eg file
+%\usepackage{\macroPath/environmentformats}  % Environments esp. verbatim
+\usepackage{\macroPath/tensorCommon}        % Common tensor symbols
+\usepackage{\macroPath/tensorEquation}      % Common tensor equations
+\usepackage{\macroPath/tensorOperator}      % Common tensor operators
+
+% make $\times$, $+$, $-$ and $=$ use less space
+\newcommand{\tims}{\negthinspace \times \negthinspace}
+\newcommand{\eq}{\negthinspace = \negthinspace}
+\newcommand{\plus}{\negthinspace + \negthinspace}
+\newcommand{\minus}{\negthinspace - \negthinspace}
+
+\newcommand{\half}{{\ensuremath{^1\negthickspace/\negthinspace_2}}}
+\newcommand{\vortDiv}{\ensuremath{\sqrt{\zeta^2\plus \delta^2}}}
+\newcommand{\expForm}[2]{\ensuremath{#1\tims 10^{#2}}}
+\newcommand{\persec}{\ensuremath{s^{\minus 1}}}
+\newcommand{\persecm}{\ensuremath{s^{\minus 1}m^{\minus 1}}}
+
+%\usepackage{hyperrefstyles}      % Hypertext stuff - must be last
+\usepackage{hyperref}      % Hypertext stuff - must be last
+\hypersetup{%
+    bookmarksopen=true, %
+    bookmarks=true, %
+    pdfmenubar=true, %
+    pdfwindowui=true, %
+    pdfpagemode=None, %
+    pdfstartview=Fit %
+%    pdfpagetransition={Wipe /Di /H}%
+}
+
+
+% remove caption numbers
+\long\def\@makecaption#1#2{%
+%  \def\baselinestretch{2}\normalsize
+  \vskip\abovecaptionskip
+%  \sbox\@tempboxa{#1: #2}%
+  \sbox\@tempboxa{#2}%
+  \ifdim \wd\@tempboxa >\hsize
+%    #1: #2\par
+    #2\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+
+\renewenvironment{list0}%
+{
+    \begin{list}{\textcolor{darkgreen}{$\bullet$}}
+    {
+        \setlength{\leftmargin}{0.2in}
+        \setlength{\labelwidth}{0.2in}
+        \setlength{\itemsep}{-0.5ex}
+        \raggedright
+    }
+}
+{\end{list}}
+
+\renewenvironment{list1}%
+{\vspace{-12pt}\begin{list}{\textcolor{blue}{--}}
+             {\setlength{\leftmargin}{0.5in}\setlength{\itemsep}{0ex}}}
+{\end{list}\vspace{-12pt}}
+
+\renewenvironment{slide}[1]
+{
+    \clearpage\begin{center}\begin{minipage}{\linewidth}
+    \begin{center}\Large\bfseries #1 \end{center}
+}
+{\vspace{-6in}\end{minipage}\end{center}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

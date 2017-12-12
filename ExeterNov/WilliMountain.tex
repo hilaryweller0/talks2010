@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}\huge
+
+AtmosFOAM test case results using different meshes
+
+\end{center}
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\figWidth}{0.47\linewidth}
+
+\begin{minipage}{\figWidth}\centering
+    \large\bf Shallow Water Flow over a Mountain
+    \normalsize\normalfont (Test case of Williamson et al, 1992) \\
+    Height difference from initial conditions\\
+    after 15 days (m)\\
+    \includegraphics[width=\linewidth]
+    {../../2009/BathMay2009/graphics/shallowWater+WilliMountain+legends+hDiff400_hDiff.png}
+\end{minipage}
+%
+\begin{minipage}{\figWidth}\centering\small
+Spectral Model Reference Solution \\
+\includegraphics[width=\linewidth]
+{../../2009/BathMay2009/graphics/shallowWater+WilliMountain+96x192+ref2+1296000+hDiff400.png}
+\end{minipage}
+
+\begin{minipage}{\figWidth}\centering\small
+Reduced lat-lon with refinement\\
+\includegraphics[width=\linewidth]
+{../../2009/BathMay2009/graphics/shallowWater+WilliMountain+48x96_refine+save+dt_900_cubicUpwind_coeff_0+1296000+hDiff400.png}
+\end{minipage}
+%
+\begin{minipage}{\figWidth}\centering\small
+ Cubed sphere with refinement\\
+\includegraphics[width=\linewidth]
+{../../2009/BathMay2009/graphics/shallowWater+WilliMountain+cube24_eq_refine+save+dt_900_cubicUpwind_coeff_0+1296000+hDiff400.png}
+\end{minipage}
+
+\begin{minipage}{\figWidth}\centering\small
+Voronoi with refinement\\
+\includegraphics[width=\linewidth]
+{../../2009/BathMay2009/graphics/shallowWater+WilliMountain+bucky5_refine+save+dt_900_cubicUpwind_coeff_0+1296000+hDiff400.png}
+\end{minipage}
+%
+\begin{minipage}{\figWidth}\centering\small
+Triangular with refinement\\
+\includegraphics[width=\linewidth]
+{../../2009/BathMay2009/graphics/shallowWater+WilliMountain+tri5_refine+save+dt_900_quadUpwind_linInterp+1296000+hDiff400.png}
+\end{minipage}
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+{
+    \normalsize\normalfont
+    Normalised root mean square errors after 15 days. \\
+    Relative to T426 Spectral reference solution.\\
+    Models with different resolutions\\ \ \\
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\includegraphics[scale=1]
+{../../2009/BathMay2009/graphics/shallowWater+WilliMountain+plotWerrors+plotsC+l2.pdf}
+%
+\includegraphics[scale=1]
+{../../2009/BathMay2009/graphics/shallowWater+WilliMountain+plotWerrors+plotsC+l2_n.pdf}
+
+\end{slide}
+

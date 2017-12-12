@@ -1,0 +1,114 @@
+New Title:
+Multiscale Numerics for the Atmosphere and Ocean
+
+First Priority: paragraph for INI
+
+Outcome:
+Evaluation of different numerics for atmosphere and ocean
+
+We will seek additional funding from:
+NCAS and Grantham for workshops
+HPC vendors
+DOE, NFS and ONR to sponsor travel of US participants
+Met Office to sponsor attendance of Met Office employees and possibly those working on dynamical core project
+NERC to sponsor those working on dynamical core project (newly added)
+ECMWF?
+
+Workshops: 4 or 5 talks per day
+make links with ICFD
+1. Numerics
+    - discretisation
+    - discretisation at changes in resolution
+    - conservation and balance at changes in resolution
+    - closures
+This workshop will occur at the end of August, hopefully directly after the unstructured ocean modelling workshop after consultation with Julie
+
+2. Adaptivity 10-14 Dec at INI
+    - static
+    - dynamic
+    - meshing
+    - refinement criteria
+    - conservation and balance
+    - mapping and coupling
+
+3. Computer Science, computational science at the Met Office new dynamical core
+    - to be held at the Met office after consultation with them
+    - Oct-Nov
+    - seek sponsorship from Microsoft research and Fujitsu
+
+Work Plans
+Bring your own model if appropriate
+Test problems for us to do and compare with each other will be decided on in advance by emailing all participants
+    - numerical analysis
+    - static test problems with resolution changes
+    - mapping problems
+
+Training course
+This should be for post-docs rather than for graduate students
+Climate for mathematicians and maths for climate scientists
+How and why climate models work
+Timing and lecturers for this were not discussed
+There would be time right at the end, after the final workshop? Sounds unpopular
+
+Email strategy:
+Email everyone at the same time asking for an interest in attending
+forward responses to Christine West
+ask for tentative commitment for one month
+
+First Round of Invitees:
+Possible Roschild fellow: Max Gunzburger
+
+A+ list
+Oden
+Omar Ghattas
+Mark Ainsworth
+John Thuburn
+Bill Grop (computer science)
+Carl Wunsch
+Tom Hughes
+Rolf Rannicker
+Alastair Adcroft
+
+A list
+Julie Pietrzak
+Christiane Jablonowski
+Joern Behrens
+Frank Giraldo
+Bob Hallberg
+Peter Lauritzen
+Bill Skamarock
+Spencer Sherwin
+Mark Taylor
+Oubay Hassan (meshing at Swansea)
+Sergey Danilov
+Colin Cotter
+Sebastian Reich
+Jean Francois Remacle
+Dave Williamson
+Vincent Legat
+Rupert Klein
+Paul Houston
+Endre Suli
+Dale Durran
+Daryl Holm
+Chris Budd
+Peter Jimack
+Marsha Burger
+David Dritschel
+Don Estep
+
+Garth Wells
+Keith Julian
+Marco Giorgetta
+Andy Hogg from ANU
+
+Fred Dupont
+LeRoux
+
+ADCIRC people
+NICAM people:
+    Miura
+    Tomita
+    
+Broaden geographical and cultural diversity, especially from China and Russia
+

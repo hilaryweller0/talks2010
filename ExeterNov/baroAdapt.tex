@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+{
+    Adaptive Mesh Modelling:
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}\large
+
+Mesh refinement criteria
+\end{center}
+
+\begin{list0}
+
+\item Climate models do not converge with resolution -- instead more features are resolved.
+
+\item So mathematical error estimates may not be optimal refinement criteria
+
+\item Infrequent adaptation:
+
+\begin{list1}
+
+\item Reduce inevitable cost and loss of accuracy associated with adaptation
+
+\item Do not recursively resolve spurious features
+
+\item Do not resolve all fine scales
+
+\end{list1}
+\end{list0}
+
+This has motivated:
+\begin{center}
+\color{purple}\Huge \ \\
+    Anticipative Mesh Refinement
+\end{center}
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+{
+    Anticipative Mesh Refinement for \\
+    Barotropically Unstable Jet with Mesh Adaptation every 12 hours
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{48pt}
+
+\href{run:vorticityFilledMeshLines.gif}
+{
+\includegraphics[width=\linewidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+predictAdvectMagGrad+save+dx_6e4_spread_1_magGradVortDiv_1-4e-10+475201+vorticityFilledMeshLines.png}
+}
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+{
+    Anticipative Mesh Refinement
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Required mesh density for the next 12 hours is predicted by simulating the next 12 hours on a coarse mesh and accumulating mesh refinement metrics:
+
+\begin{center}
+Vorticity ($\zeta$) and mesh at 5\half\ days, before remeshing (31,467 cells) \\
+\includegraphics[width=0.7\linewidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+predictAdvectMagGrad+save+dx_6e4_spread_1_magGradVortDiv_1-4e-10+475200+vorticityFilledMeshLines.png}\\
+
+$\downarrow$ Vorticity mapped onto 2,562 cell uniform coarse mesh
+\includegraphics[width=0.7\linewidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+predictAdvectMagGrad+save+dx_6e4_spread_1_magGradVortDiv_1-4e-10+meshing+save_518400+475200+vorticity.png}
+\end{center}
+
+\begin{minipage}{0.12\linewidth}
+$\zeta~ s^{-1}$
+\end{minipage}
+\begin{minipage}{0.87\linewidth}
+\includegraphics[width=\linewidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+legends+vorticityFilledMeshLines_vorticity.png}
+\end{minipage}
+
+
+\end{slide}
+
+

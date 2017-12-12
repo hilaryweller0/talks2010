@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+{
+    Barotropically Unstable Jet Test Case
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Initially geostrophically balanced mid-latitude jet with very small unbalanced
+height perturbation
+
+\vspace{20pt}
+\begin{center}
+Initial vorticity $(s^{-1}$)
+\\
+\href{run:vorticityFilled.gif}{\includegraphics[width=0.7\linewidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+288x576+0+vorticityFilled.png}}
+\\
+Initial height perturbation ($m$)
+\\
+\includegraphics[width=0.7\linewidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+288x576+0+hDiff.png}
+\end{center}
+
+What mesh structure is best for this test case
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+{
+    Barotropically Unstable Jet
+    \normalsize\normalfont (Test case of Galewsky et al 2004)
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\figWidth}{0.49\linewidth}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{0}
+
+\begin{tabular}{cc}
+
+$\downarrow$ Reference solution
+{\small (Reduced $576\tims 1152$ lat-lon)} &
+$\downarrow$ $288\tims576$ lat-lon rotated 30\de \small (137,666 cells)
+\\
+\includegraphics[width=\figWidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+576x1152+518400+vorticitySJD+08.png}
+&
+\includegraphics[width=\figWidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+288x576_30+518400+vorticitySJD+08.png}
+\\
+$\downarrow$ Hexagonal grid 8 \small (163,842 cells) &
+$\downarrow$ With refined circle  \small (179,456 cells)
+\\
+\includegraphics[width=\figWidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+bucky8+518400+vorticitySJD+08.png}
+&
+\includegraphics[width=\figWidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+Voronoi8_refine+518400+vorticitySJD+08.png}
+\\
+$\downarrow$ Cubed sphere $144\tims 144\tims 6$ \small (124,416 cells) &
+$\downarrow$ With refined circle  \small (139,080 cells)
+\\
+\includegraphics[width=\figWidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+cube144_eq+518400+vorticitySJD+08.png}
+&
+\includegraphics[width=\figWidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+cube144_eq_refine+518400+vorticitySJD+08.png}
+\\
+$\downarrow$ Reduced $288\tims 576$ lat-lon at 0\de\  \small (137,666 cells) &
+$\downarrow$ With refined circle  \small (152,606 cells)
+\\
+\includegraphics[width=\figWidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+288x576+518400+vorticitySJD+08.png}
+&
+\includegraphics[width=\figWidth]
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+288x576_refine+518400+vorticitySJD+08.png}
+\\
+\end{tabular}
+
+\begin{minipage}{0.2\linewidth}\raggedright
+Relative vorticity after 6 days ($s^{-1}$)
+\end{minipage}
+\begin{minipage}{0.79\linewidth}
+\includegraphics
+{../../2009/BathMay2009/graphics/shallowWater+baroInstab+legends+vorticitySJD+08_vorticity.png}
+\end{minipage}
+
+\begin{center}\vspace{10pt}
+Meshes plotted of squares are $\times 12$ coarser and of polygons $\times 8$ coarser for clarity
+\end{center}
+
+\end{slide}

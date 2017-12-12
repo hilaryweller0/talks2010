@@ -1,0 +1,4 @@
+Adaptive Mesh Modelling of the Global Atmosphere
+Hilary Weller
+
+The next generation of models for weather and climate prediction may look very different from the current, well optimised generation: Future models may use different grids which avoid the pole problem and use unstructured or adaptive meshes. During this talk I will demonstrate some advantages and disadvantages of a lat-lon grid, a cubed sphere and triangular and hexagonal icosahedral grids both with and without local refinement. I will then describe and demonstrate a mesh refinement criteria which anticipates mesh requirements many time steps into the future. 

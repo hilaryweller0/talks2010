@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+{
+    AtmosFOAM: Shallow water solver for any mesh
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{20pt}
+\begin{list0}
+
+\item Written using open source package OpenFOAM {\tt www.opencfd.co.uk}
+
+\vspace{-20pt}
+\item
+\begin{minipage}[t]{0.17\linewidth}\raggedright
+Shallow water equations {\small(SWEs)}:
+\end{minipage}
+\begin{minipage}[c]{0.52\linewidth}\vspace{-10pt}\begin{align*}
+    \tfrac{\partial h \vec{U}}{\partial t} + \nabla \dprod (h \vec{U} \tprod \vec{U})
+    &= -\gvec{\Omega} \times h\vec{U} - g h \nabla (h + h_0) \\
+    \tfrac{\partial h}{\partial t} + \nabla \dprod h \vec{U} &= 0
+\end{align*}\end{minipage}
+\begin{minipage}[c]{0.24\linewidth}\vspace{20pt}
+\includegraphics[width=\linewidth]{../../2009/BathMay2009/plots/shallowWater.pdf}
+\end{minipage}
+\\  \vspace{-40pt}
+
+\item
+\begin{minipage}[t]{0.4\linewidth}\raggedright
+    Co-located finite volume on polyhedra: \\
+    Volumetric mean gradients and divergences converted to sums of mass fluxes over faces using Gauss' theorem:
+\end{minipage}
+\begin{minipage}[c]{0.28\linewidth}\vspace{40pt}\begin{align*}
+\int_V \nabla & \dprod h\vec{U} dV = \sum_\text{faces}h\vec{U}\dprod \vec{S}\\
+\int_V \nabla & h dV = \sum_\text{faces}h_f \vec{S}
+\end{align*}\end{minipage}
+\begin{minipage}[c]{0.25\linewidth}\vspace{50pt}
+\includegraphics[width=\figWidth]{../../2009/BathMay2009/plots/oneCell.pdf}
+\end{minipage}
+
+\item $\phi$ as well as $h$ and $h\vec{U}$ evolved from old time step using SWEs to reduce computational mode (Rhie and Chow, 1983)
+
+\item Semi-implicit
+
+\item Explicit corrections
+\begin{minipage}[t]{0.7\linewidth}\raggedright\begin{list2m}
+\item 2D quadratic and 2D upwind cubic differencing
+\item non-linear advection
+\item Coriolis
+\end{list2m}\end{minipage}
+
+\item No explicit diffusion or filtering
+
+\end{list0}
+
+\end{slide}

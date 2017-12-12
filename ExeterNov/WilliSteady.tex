@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{A Closer Look at non-uniform Meshes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This all looks very nice but:
+
+\begin{list0}
+\item Quadratic and upwind biased differencing is needed to avoid grid scale oscillations where the grid changes resolution:
+    \begin{list1}
+    \item More expensive than linear differencing
+    \item Upwinding can only dampen oscillations if the mean flow is larger than the oscillation
+    \item Upwinding should only be used to smooth advection errors, not spurious wave modes
+    \item Mesh refinement where it is not needed can reduce accuracy 
+    {\Huge \frownie}
+    \end{list1}
+\end{list0}
+
+\includegraphics[width=0.59\linewidth]
+{graphics/vSlice+hill_2D_ico+withRefinement+icoFoam+2160+pU.png}
+%
+\includegraphics[width=0.39\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+48x96_2+refinedBox+linear_f+save+A_quad+345600+hUdiff.png}
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}{0.34\linewidth}
+\raggedright
+{\bf\Large
+Steady state, geostrophically balanced flow of the linearised shallow water equations on an f sphere}
+\begin{align*}
+    \tfrac{\partial \vec{U}}{\partial t} + f\vec{k} \times \vec{U}
+    &= - g \nabla h \\
+    \tfrac{\partial h}{\partial t} + H \nabla \dprod \vec{U} &= 0
+\end{align*}
+\end{minipage}
+%
+\begin{minipage}{0.65\linewidth}
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+Voronoi_f+save+A_quad+0+hU.png}
+\end{minipage}
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{Geostrophically Balanced Flow of Linearised SWEs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Changes from initial conditions after 4 days.\\
+Co-located height and velocity\\
+quadratic differencing
+
+\begin{minipage}{0.49\linewidth}
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+Voronoi_f+save+A_quad+345600+hUdiff.png}
+\end{minipage}
+%
+\begin{minipage}{0.49\linewidth}
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+48x96_2+refinedBox+linear_f+save+A_quad+345600+hUdiff.png}
+\end{minipage}
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{Geostrophically Balanced Flow of Linearised SWEs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Changes from initial conditions after 4 days.\\
+Staggered variables: normal component of velocity at cell edges, tangential component interpolated\\
+Quadratic differencing
+
+\begin{minipage}{0.49\linewidth}
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+Voronoi_f+save+reconMidPoint_C+345600+hUdiff.png}
+\end{minipage}
+%
+\begin{minipage}{0.49\linewidth}
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+48x96_2+refinedBox+linear_f+save+reconMidPoint_C+345600+hUdiff.png}
+\end{minipage}
+
+\begin{center}\color{purple}\Large\it\ \\
+This has made no difference to the grid scale oscillations!?!
+\end{center}
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{Make the Meshes into Voronoi Tesselations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Eliminates non-othogonality and off-centered interpolation errors\\
+Allows very cheap mid-point interpolation \\
+Cell centres no longer at centre of mass
+
+\begin{minipage}{0.49\linewidth}
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+Voronoi_f+constant+meshWithOverlay.pdf}
+\end{minipage}
+%
+\begin{minipage}{0.49\linewidth}
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+48x96_V+0+meshWithOverlay.pdf}
+\end{minipage}
+
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{Geostrophically Balanced Flow of Linearised SWEs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Changes from initial conditions after 4 days.\\
+Staggered variables: normal component of velocity at cell edges, tangential component interpolated\\
+Midpoint differencing, Voronoi tesselation meshes
+
+\begin{minipage}{0.49\linewidth}
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+Voronoi_f+save+reconLin+345600+hUdiff.png}
+\end{minipage}
+%
+\begin{minipage}{0.49\linewidth}
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+48x96_V+save+reconLin+345600+hUdiff.png}
+\end{minipage}
+
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}{Geostrophically Balanced Flow of Linearised SWEs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Changes from initial conditions after 4 days.\\
+Staggered variables: normal component of velocity at cell edges, {\color{purple}\it Thuburn et al (2009)} tangential velocity, Voronoi tesselation meshes
+
+\begin{minipage}{0.49\linewidth}
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+Voronoi_f+save+TRSK+345600+hUdiff.png}
+\end{minipage}
+%
+\begin{minipage}{0.49\linewidth}
+\includegraphics[width=\linewidth]
+{graphics/shallowWater+WilliSteadyMeshAdapt+48x96_V+save+TRSK+345600+hUdiff.png}
+\end{minipage}
+
+\end{slide}
+
